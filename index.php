@@ -10,7 +10,7 @@
     $arrayPostData['messages'][0]['type'] = "text";
         if($message == "สวัสดี"){
             $topic = "node1"
-            pubMqtt($topic,$message)
+            //pubMqtt($topic,$message)
             $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";}
         else if($message == "ลาก่อน"){
             //pubMqtt("phphook",$message)
