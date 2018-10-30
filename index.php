@@ -8,15 +8,15 @@
     $message = $arrayJson['events'][0]['message']['text']; //receive message from LINE
     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
     $arrayPostData['messages'][0]['type'] = "text";
-        if($message == "สวัสดี"){
+       // if($message == "สวัสดี"){
             $topic = "node-red";
             pubMqtt($topic,$message);
-            $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";}
-        else if($message == "ลาก่อน"){
-            //pubMqtt("phphook",$message)
-            $arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
-        else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจคำสั่ง";}
-        replyMsg($arrayHeader,$arrayPostData);
+      //      $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";}
+     //   else if($message == "ลาก่อน"){
+
+    //        $arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
+    //    else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจคำสั่ง";}
+     //   replyMsg($arrayHeader,$arrayPostData);
         
 function pubMqtt($topic,$msg){
     $appid= "PocketBot/"; //enter your appid
