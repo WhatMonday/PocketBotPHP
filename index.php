@@ -11,7 +11,7 @@
        // if($message == "สวัสดี"){
             $topic = "node-red";
             pubMqtt($topic,$message);
-      //      $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";}
+            $arrayPostData['messages'][0]['text'] = $message;}
      //   else if($message == "ลาก่อน"){
 
     //        $arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
