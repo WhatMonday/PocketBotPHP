@@ -16,7 +16,7 @@
 
     //        $arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
     //    else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจคำสั่ง";}
-     //   replyMsg($arrayHeader,$arrayPostData);
+        replyMsg($arrayHeader,$arrayPostData);
         
 function pubMqtt($topic,$msg){
     $appid= "PocketBot/"; //enter your appid
