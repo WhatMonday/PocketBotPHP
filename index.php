@@ -14,7 +14,7 @@
         else if($message == "ลาก่อน"){
             //pubMqtt("phphook","GoodBye")
             $arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
-        else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจข้อความ";}
+        else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจคำสั่ง";}
         replyMsg($arrayHeader,$arrayPostData);
         
 function pubMqtt($topic,$msg){
