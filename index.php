@@ -10,7 +10,7 @@
     $arrayPostData['messages'][0]['type'] = "text";
         if($message == "สวัสดี"){$arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";}
         else if($message == "ลาก่อน"){$arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
-        else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจข้อความ";}
+        else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจคำสั่ง";}
         replyMsg($arrayHeader,$arrayPostData);
         
         
