@@ -9,10 +9,10 @@
     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
     $arrayPostData['messages'][0]['type'] = "text";
         if($message == "สวัสดี"){
-            pubMqtt("phphook","Hello")
+            //pubMqtt("phphook","Hello")
             $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";}
         else if($message == "ลาก่อน"){
-            pubMqtt("phphook","GoodBye")
+            //pubMqtt("phphook","GoodBye")
             $arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
         else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจข้อความ";}
         replyMsg($arrayHeader,$arrayPostData);
