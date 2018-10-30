@@ -8,12 +8,34 @@
     $message = $arrayJson['events'][0]['message']['text']; //receive message from LINE
     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
     $arrayPostData['messages'][0]['type'] = "text";
-        if($message == "สวัสดี"){$arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";}
-        else if($message == "ลาก่อน"){$arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
-        else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจคำสั่ง";}
+        if($message == "สวัสดี"){
+            pubMqtt("node1","Hello")
+            $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";}
+        else if($message == "ลาก่อน"){
+            pubMqtt("node1","GoodBye")
+            $arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
+        else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจข้อความ";}
         replyMsg($arrayHeader,$arrayPostData);
         
-        
+function pubMqtt($topic,$msg){
+    $appid= "PocketBot/"; //enter your appid
+    $key = "LdRKpKsOIWwinGl"; //enter your key
+    $secret = "xrmzXXM5Rrek6nZIqmBGWYLtl"; //enter your secret
+    $Topic = "$topic"; 
+      put("https://api.netpie.io/microgear/".$appid.$Topic."?retain&auth=".$key.":".$secret,$msg);
+  }
+function put($url,$tmsg){ 
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $tmsg);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    echo $response . "\r\n";
+    return $response;
+}
 function replyMsg($arrayHeader,$arrayPostData){
     $strUrl = "https://api.line.me/v2/bot/message/reply";
     $ch = curl_init();
@@ -27,5 +49,6 @@ function replyMsg($arrayHeader,$arrayPostData){
     $result = curl_exec($ch);
         curl_close ($ch);
     }
+
    exit;
 ?>
