@@ -10,9 +10,9 @@
     $arrayPostData['messages'][0]['type'] = "text";
        // if($message == "สวัสดี"){
             $topic = "node-red";
-            $arrayPostData['messages'][0]['text'] = $message;//}
+            pubMqtt($topic,$message);
+            $arrayPostData['messages'][0]['text'] = $message;
             replyMsg($arrayHeader,$arrayPostData);
-          pubMqtt($topic,$message);
       //      
      //   else if($message == "ลาก่อน"){
 
