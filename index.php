@@ -9,7 +9,7 @@
     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
     $arrayPostData['messages'][0]['type'] = "text";
         if($message == "สวัสดี"){
-            //pubMqtt("phphook","Hello")
+            pubMqtt("node1","Hello")
             $arrayPostData['messages'][0]['text'] = "สวัสดีจ้าาา";}
         else if($message == "ลาก่อน"){
             //pubMqtt("phphook","GoodBye")
