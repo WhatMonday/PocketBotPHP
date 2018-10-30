@@ -11,12 +11,12 @@
        // if($message == "สวัสดี"){
             $topic = "node-red";
             pubMqtt($topic,$message);
-            $arrayPostData['messages'][0]['text'] = "OK";}
+      //      $arrayPostData['messages'][0]['text'] = "OK";}
      //   else if($message == "ลาก่อน"){
 
     //        $arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
     //    else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจคำสั่ง";}
-        replyMsg($arrayHeader,$arrayPostData);
+    //    replyMsg($arrayHeader,$arrayPostData);
         
 function pubMqtt($topic,$msg){
     $appid= "PocketBot/"; //enter your appid
