@@ -19,8 +19,8 @@
         
 function pubMqtt($topic,$msg){
     $appid= "PocketBot/"; //enter your appid
-    $key = "R1E4vlLKlxgqxpy"; //enter your key
-    $secret = "Z7NF81CBn8C8ucb8dkuLhxeSZ"; //enter your secret
+    $key = "E8d0mBCaYxpb6FW"; //enter your key
+    $secret = "XxnxMl4kZ51vWCli1rQpEtib7"; //enter your secret
     $Topic = "$topic"; 
       put("https://api.netpie.io/microgear/".$appid.$Topic."?retain&auth=".$key.":".$secret,$msg);
   }
