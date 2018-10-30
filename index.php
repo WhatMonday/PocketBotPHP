@@ -10,13 +10,15 @@
     $arrayPostData['messages'][0]['type'] = "text";
        // if($message == "สวัสดี"){
             $topic = "node-red";
+            $arrayPostData['messages'][0]['text'] = "OK";}
+            replyMsg($arrayHeader,$arrayPostData);
             pubMqtt($topic,$message);
-      //      $arrayPostData['messages'][0]['text'] = "OK";}
+      //      
      //   else if($message == "ลาก่อน"){
 
     //        $arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
     //    else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจคำสั่ง";}
-    //    replyMsg($arrayHeader,$arrayPostData);
+    //    
         
 function pubMqtt($topic,$msg){
     $appid= "PocketBot/"; //enter your appid
