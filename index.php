@@ -12,7 +12,7 @@
             $topic = "node-red";
             $arrayPostData['messages'][0]['text'] = "OK";}
             replyMsg($arrayHeader,$arrayPostData);
-            pubMqtt($topic,$message);
+          //  pubMqtt($topic,$message);
       //      
      //   else if($message == "ลาก่อน"){
 
