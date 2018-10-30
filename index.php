@@ -11,7 +11,7 @@
        // if($message == "สวัสดี"){
             $topic = "node-red";
             pubMqtt($topic,$message);
-            $replytoken = $arrayJson['events'][0]['replyToken']['text'];
+            $replytoken = $arrayJson['events'][0]['replyToken'];
             $arrayPostData['messages'][0]['text'] = $replytoken;
             replyMsg($arrayHeader,$arrayPostData);
       //      
