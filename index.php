@@ -9,7 +9,7 @@
     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
     $arrayPostData['messages'][0]['type'] = "text";
        // if($message == "สวัสดี"){
-            $topic = "node-red";
+            $topic = "PRB_REMOTE_01";
             pubMqtt($topic,$message);
             $replytoken = $arrayJson['events'][0]['replyToken'];
             $arrayPostData['messages'][0]['text'] = $replytoken;
