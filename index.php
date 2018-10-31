@@ -8,12 +8,14 @@
     $message = $arrayJson['events'][0]['message']['text']; //receive message from LINE
     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
     $arrayPostData['messages'][0]['type'] = "text";
+    $replytoken = $arrayJson['events'][0]['replyToken'];
+    $message .= ","
+    $message .= $replytoken
        // if($message == "สวัสดี"){
             $topic = "PRB_REMOTE_01";
             pubMqtt($topic,$message);
-            $replytoken = $arrayJson['events'][0]['replyToken'];
             $arrayPostData['messages'][0]['text'] = $replytoken;
-            replyMsg($arrayHeader,$arrayPostData);
+           // replyMsg($arrayHeader,$arrayPostData);
       //      
      //   else if($message == "ลาก่อน"){
 
