@@ -15,7 +15,7 @@
             $topic = "PRB_REMOTE_01";
             pubMqtt($topic,$message);
             $arrayPostData['messages'][0]['text'] = $replytoken;
-           // replyMsg($arrayHeader,$arrayPostData);
+           replyMsg($arrayHeader,$arrayPostData);
       //      
      //   else if($message == "ลาก่อน"){
 
