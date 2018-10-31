@@ -3,7 +3,7 @@ $strAccessToken = "dzaOAQEbS4W3KQFaoq2IbC8Z6rxrvk46MkI6tgcmhFRy9amJTG48myOZdg8Ou
 $arrayHeader = array();
 $arrayHeader[] = "Content-Type: application/json";
 $arrayHeader[] = "Authorization: Bearer {$strAccessToken}";
-$arrayPostData['replyToken'] = "47f936df88d04dda857381c90dc9d634";
+$arrayPostData['replyToken'] = "0040660b24814da7bb91a1445405b328";
 $arrayPostData['messages'][0]['type'] = "text";
 $arrayPostData['messages'][0]['text'] = "OK";
 replyMsg($arrayHeader,$arrayPostData);
