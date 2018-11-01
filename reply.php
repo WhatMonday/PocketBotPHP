@@ -1,13 +1,14 @@
 <?php
+$msg=$_POST["message"];
+$token=$_POST["token"];
 $strAccessToken = "dzaOAQEbS4W3KQFaoq2IbC8Z6rxrvk46MkI6tgcmhFRy9amJTG48myOZdg8OuKsex4aKxDgevUajHk9PgtXLR1GTjlFav5brcEKP8bV/o+YqkSeVylPHY+UtfzzNrZO4OT6ZGZSfa3cFvpNMosmuRQdB04t89/1O/w1cDnyilFU=";
 $arrayHeader = array();
 $arrayHeader[] = "Content-Type: application/json";
 $arrayHeader[] = "Authorization: Bearer {$strAccessToken}";
-$arrayPostData['replyToken'] = "0040660b24814da7bb91a1445405b328";
+$arrayPostData['replyToken'] = $token;
 $arrayPostData['messages'][0]['type'] = "text";
-$arrayPostData['messages'][0]['text'] = "OK";
+$arrayPostData['messages'][0]['text'] = $msg;
 replyMsg($arrayHeader,$arrayPostData);
-
 function replyMsg($arrayHeader,$arrayPostData){
     $strUrl = "https://api.line.me/v2/bot/message/reply";
     $ch = curl_init();
