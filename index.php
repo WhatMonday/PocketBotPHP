@@ -15,8 +15,8 @@
             $topic = "node-red";
             pubMqtt($topic,$message);
             $arrayPostData['messages'][0]['text'] = $replytoken;
-//sleep(10);
-           replyMsg($arrayHeader,$arrayPostData);
+        //sleep(10);
+        // replyMsg($arrayHeader,$arrayPostData);
       //      
      //   else if($message == "ลาก่อน"){
 
