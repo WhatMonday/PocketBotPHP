@@ -1,6 +1,8 @@
 <?php
 $msg=$_POST["message"];
 $token=$_POST["token"];
+echo $msg;
+echo $token;
 $strAccessToken = "dzaOAQEbS4W3KQFaoq2IbC8Z6rxrvk46MkI6tgcmhFRy9amJTG48myOZdg8OuKsex4aKxDgevUajHk9PgtXLR1GTjlFav5brcEKP8bV/o+YqkSeVylPHY+UtfzzNrZO4OT6ZGZSfa3cFvpNMosmuRQdB04t89/1O/w1cDnyilFU=";
 $arrayHeader = array();
 $arrayHeader[] = "Content-Type: application/json";
