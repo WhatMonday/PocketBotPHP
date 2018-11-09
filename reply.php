@@ -23,7 +23,7 @@ function replyMsg($arrayHeader,$arrayPostData){
         curl_close ($ch);
     }
 function ConvertMessage($msg){
- $device = array("D0","D1","D2","D3","D4","D5","D6","D7","D8");
+ $device = array("ไฟหน้าบ้าน","D1","D2","D3","D4","D5","D6","D7","D8");
    $s = explode(",", $msg);
    $result=$device[(int)$s[0]];
     if ($s[2] == "check"){
