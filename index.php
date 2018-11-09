@@ -5,25 +5,15 @@
         $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
-    $message = $arrayJson['events'][0]['message']['text']; //receive message from LINE
+
     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
     $arrayPostData['messages'][0]['type'] = "text";
-    $replytoken = $arrayJson['events'][0]['replyToken'];
+    $message = $arrayJson['events'][0]['replyToken'];
     $message .= ",";
-    $message .= $replytoken;
-       // if($message == "สวัสดี"){
+    $message .= $arrayJson['events'][0]['message']['text']; //receive message from LINE
             $topic = "node1";
             pubMqtt($topic,$message);
             $arrayPostData['messages'][0]['text'] = $replytoken;
-        //sleep(10);
-        // replyMsg($arrayHeader,$arrayPostData);
-      //      
-     //   else if($message == "ลาก่อน"){
-
-    //        $arrayPostData['messages'][0]['text'] = "โชคดีนะ";}
-    //    else{$arrayPostData['messages'][0]['text'] = "ไม่เข้าใจคำสั่ง";}
-    //    
-        
 function pubMqtt($topic,$msg){
     $appid= "PocketBot/"; //enter your appid
     $key = "E8d0mBCaYxpb6FW"; //enter your key
@@ -39,7 +29,6 @@ function put($url,$tmsg){
     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-
     $response = curl_exec($ch);
     curl_close($ch);
     echo $response . "\r\n";
