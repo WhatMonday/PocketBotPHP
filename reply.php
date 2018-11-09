@@ -28,9 +28,9 @@ function ConvertMessage($msg){
    $result=$device[(int)$s[0]];
     if ($s[2] == "check"){
          if ($s[1] == "on"){
-             $result .= " ถูกเปิดอยู่";
+             $result .= " ถูกเปิดอยู่\nหากต้องการปิด\nกดที่นี่";
         }else if($s[1] == "off"){
-             $result .= " ถูกปิดอยู่";
+             $result .= " ถูกปิดอยู่\nหากต้องการเปิด\nกดที่นี่";
         }
     }else{ 
         if ($s[2] == "on"){
