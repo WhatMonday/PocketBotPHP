@@ -12,7 +12,7 @@
     $message .= ",";
     $message .= $replytoken;
        // if($message == "สวัสดี"){
-            $topic = "PRB_REMOTE_01";
+            $topic = "node1";
             pubMqtt($topic,$message);
             $arrayPostData['messages'][0]['text'] = $replytoken;
         //sleep(10);
